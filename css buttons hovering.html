@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>css button Hovering Effects-1</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .btn {
+            text-decoration: none;
+            display: inline-block;
+            width: 100px;
+            padding: 7px;
+            background: #303948;
+            text-align: center;
+            color: #fff;
+            border: 1px solid #303948;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 0;
+            margin-bottom: 10px;
+        }
+        
+        .btn::before {
+            content: '';
+            display: inline-block;
+            width: 50%;
+            height: 100%;
+            background: #86abed;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover::before {
+            width: 100%;
+        }
+        
+        .btn-right::before {
+            left: auto;
+            right: 0;
+        }
+        
+        .btn-top::before,
+        .btn-bottom::before {
+            height: 50%;
+            width: 100%;
+        }
+        
+        .btn-top:hover::before,
+        .btn-bottom:hover::before {
+            height: 100%;
+        }
+        
+        .btn-bottom::before {
+            top: auto;
+            bottom: 0;
+        }
+        /* That's it */
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <a href="#" class="btn btn-left"> Button 1</a>
+        <a href="#" class="btn btn-right"> Button 2</a>
+        <a href="#" class="btn btn-top"> Button 3</a>
+        <a href="#" class="btn btn-bottom"> Button 4</a>
+    </div>
+</body>
+
+</html>
